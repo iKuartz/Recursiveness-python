@@ -1,9 +1,15 @@
-entrada = int(input("Por favor digite o inteiro a ser verificado"))
-sequencia = []
+from itertools import permutations
 
-def criaSequencia(lista, limite):
-    lista = range(1,limite+1)
-    print (lista)
-    return lista
+
+entrada = int(input("Por favor digite o inteiro a ser verificado"))
+
+def criaListas(limite):
+    tuples = list(permutations(range(1, limite+1)))
+    lists = list(map(list, tuples))
+    print(lists)
+    return lists
+
+criaListas(entrada)
+
 
 # for x in sequencia
