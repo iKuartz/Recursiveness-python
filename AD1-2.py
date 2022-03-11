@@ -16,16 +16,16 @@ def verifica_condicoes(listas):
     temporarios = []
     for i in listas:
         for j in range(len(i)):
-            if j+i[j]+1 < len(i):
-                if i[j] == i[j+i[j]+1] or i[j] == i[j-i[j]-1]:
-                    temporarios.append(i[j])
-                    if j == len(i) and len(temporarios) == len(i):
-                        resultados.append(temporarios)
-                        temporarios = []
-                    else:
-                        temporarios = []
+            if j+i[j]+1 < len(i) and i[j] == i[j+i[j]+1] or j-i[j]-1 < len(i) and i[j] == i[j-i[j]-1]:
+                temporarios.append(i[j])
+                if j == len(i)-1 and len(temporarios) == len(i):
+                    resultados.append(temporarios)
+                    temporarios = []
                 else:
-                    continue
+                    pass
+            else:
+                temporarios = []
+                continue
     return resultados
 
 entrada = int(input("Por favor digite o inteiro a ser verificado"))
