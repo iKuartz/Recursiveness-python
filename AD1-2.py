@@ -17,6 +17,8 @@ def verifica_condicoes(listas):
     for i in listas:
         for j in range(len(i)):
             if j+i[j]+1 < len(i) and i[j] == i[j+i[j]+1] or j-i[j]-1 < len(i) and i[j] == i[j-i[j]-1]:
+                # A linha acima precisa de algum meio pra verificar que o mesmo número não vá ser colocado duas vezes
+                # Ou será necessário verificar dentre os resultados se há listas repetidas e eliminá-las. O segundo parece mais simples.
                 temporarios.append(i[j])
                 if j == len(i)-1 and len(temporarios) == len(i):
                     resultados.append(temporarios)
